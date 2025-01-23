@@ -13,7 +13,11 @@ def transform_texts(texts):
     # transformed = map(lambda t: ..., filtered_texts)
 
     # Zwróć wyniki w postaci listy.
-    pass
+    filtered_texts = filter(lambda t: t.strip(), texts)
+
+    transformed = map(lambda t: t.strip().upper()[::-1], filtered_texts)
+
+    return list(transformed)
 
 if __name__ == '__main__':
     # Przykładowe wywołanie:
