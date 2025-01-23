@@ -30,10 +30,29 @@ def create_app():
     # button_show = 
     # button_show.pack()
 
-    # TODO: return root
-    pass
+    root = tk.Tk()
+    root.title("Prosta aplikacja Tkinter")
+
+    label_instruct = tk.Label(root, text="Wpisz coś:")
+    label_instruct.pack(pady=5)
+
+    entry_text = tk.Entry(root, width=30)
+    entry_text.pack(pady=5)
+
+    label_result = tk.Label(root, text="")
+    label_result.pack(pady=5)
+
+    def show_text():
+        user_input = entry_text.get()  # Pobierz tekst z pola Entry
+        label_result.config(text=f"Wpisałeś: {user_input}")
+
+    # Przycisk "Pokaż"
+    button_show = tk.Button(root, text="Pokaż", command=show_text)
+    button_show.pack(pady=5)
+
+    return root
+    
 
 if __name__ == '__main__':
-    # TODO: app = create_app()
-    # TODO: app.mainloop()
-    pass
+    app = create_app()
+    app.mainloop()
