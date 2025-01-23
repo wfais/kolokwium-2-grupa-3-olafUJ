@@ -15,19 +15,16 @@ def draw_scatter_plot():
     4) Zwróć obiekt Figure.
     """
     np.random.seed(123)
-    
-    # utwórz x, y
-    # x = ...
-    # y = ...
-    
-    # fig, ax = 
-    
-    # ax.scatter( ... )
-    
-    # label dla x, y, title, legend
-    
-    # return rysunek
-    pass
+
+    x = np.arange(10)
+    y = np.random.uniform(0, 10, size=10)
+    fig, ax = plt.subplots()
+    ax.scatter(x, y, color='blue', label='Punkty')
+    ax.set_xlabel("oś X")
+    ax.set_ylabel("oś Y")
+    ax.set_title("Scatter Plot")
+    ax.legend()
+    return fig
 
 if __name__ == '__main__':
     fig = draw_scatter_plot()
